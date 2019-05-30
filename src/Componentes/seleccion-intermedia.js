@@ -51,6 +51,7 @@ class VistaIntermedia extends React.Component{
     
 }
 
+
 render() {
     return (
       <div className="">

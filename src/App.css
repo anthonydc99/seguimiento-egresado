@@ -479,3 +479,12 @@ button.delete:hover{
   height: 670px;
   overflow-y: auto;
 }
+.label-dato{
+  margin-top: 25px;
+  width: 800px;
+  text-align: left;
+  font-family:  'Noto Sans HK', sans-serif;
+}
+.label-dato input{
+  text-align: left;
+}

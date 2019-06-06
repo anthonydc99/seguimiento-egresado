@@ -2,6 +2,7 @@ import React from 'react';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import {browserHistory} from 'react-router-3';
 import VistaDatosPersonales from './VistaDatosPersonales';
+import VistaRegistroEgresados from './VistaRegistroEgresados';
 
 class VistaSeguimientoEgresado extends React.Component {
     constructor(props) {
@@ -74,10 +75,10 @@ class VistaSeguimientoEgresado extends React.Component {
                 <div className="">
                     <main className="content-menu">
                         <div class="collection collection-left content-menu-left">
-                            <a href="#" onClick={this.Formulario1} class={`collection-item ${ this.state.form1 ? 'active': '' }`}><i className="small material-icons left">home</i>Formulario 1</a>
-                            <a href="#" onClick={this.Formulario2} class={`collection-item ${ this.state.form2 ? 'active': '' }`}><i className="small material-icons left">home</i>Formulario 2</a>
-                            <a href="#" onClick={this.Formulario3} class={`collection-item ${ this.state.form3 ? 'active': '' }`}><i className="small material-icons left">home</i>Formulario 3</a>
-                            <a href="#" onClick={this.Formulario4} class={`collection-item ${ this.state.form4 ? 'active': '' }`}><i className="small material-icons left">home</i>Formulario 4</a>
+                            <a href="#" onClick={this.Formulario1} class={`collection-item ${ this.state.form1 ? 'active': '' }`}><i className="small material-icons left">home</i>DATOS PERSONALES</a>
+                            <a href="#" onClick={this.Formulario2} class={`collection-item ${ this.state.form2 ? 'active': '' }`}><i className="small material-icons left">home</i>FORMACIÓN ACADÉMICA EN POSGRADO</a>
+                            <a href="#" onClick={this.Formulario3} class={`collection-item ${ this.state.form3 ? 'active': '' }`}><i className="small material-icons left">home</i>EJERCICIO PROFESIONAL O DOCENTE</a>
+                            <a href="#" onClick={this.Formulario4} class={`collection-item ${ this.state.form4 ? 'active': '' }`}><i className="small material-icons left">home</i>ALTA RESPONSABILIDAD</a>
                         </div>
                         <div className="content-menu-right">
                             {this.state.form1 ? (
@@ -87,7 +88,7 @@ class VistaSeguimientoEgresado extends React.Component {
                             ) : (null)}
                             {this.state.form2 ? (
                                 <div>
-                                    <p>Form2</p>
+                                    <VistaRegistroEgresados codigo={ this.state.codigo } />
                                 </div>
                             ) : (null)}
                             {this.state.form3 ? (

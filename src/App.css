@@ -488,3 +488,18 @@ button.delete:hover{
 .label-dato input{
   text-align: left;
 }
+
+.entidad-input{
+  text-align: left;
+}
+span{
+  width: 150px;
+  text-align: left;
+}
+span .label-dato{
+  margin-top: 0px;
+}
+.label-dato p{
+  margin-top: 10px;
+  font-weight: 100;
+}

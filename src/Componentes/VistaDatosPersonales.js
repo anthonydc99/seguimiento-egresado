@@ -28,7 +28,7 @@ class VistaDatosPersonales extends React.Component {
             apeMaterno: "Carpio",
             nombre: "Anthony Moisés",
             fechaNacimiento: "13-05-1999",
-            domicilioActual : "as",
+            domicilioActual : "",
             distrito: "",
             nTelefFijo: "",
             nTelefCelular: "",

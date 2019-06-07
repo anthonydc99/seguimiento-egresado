@@ -3,6 +3,7 @@ import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import {browserHistory} from 'react-router-3';
 import VistaDatosPersonales from './VistaDatosPersonales';
 import VistaRegistroEgresados from './VistaRegistroEgresados';
+import VistaEjercicioProfesional from './VistaEjercicioProfesional';
 
 class VistaSeguimientoEgresado extends React.Component {
     constructor(props) {
@@ -93,7 +94,7 @@ class VistaSeguimientoEgresado extends React.Component {
                             ) : (null)}
                             {this.state.form3 ? (
                                 <div>
-                                    <p>Form3</p>
+                                    <VistaEjercicioProfesional codigo={ this.state.codigo } />
                                 </div>
                             ) : (null)}
                             {this.state.form4 ? (

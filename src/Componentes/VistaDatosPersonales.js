@@ -42,7 +42,7 @@ class VistaDatosPersonales extends React.Component {
 
     render() {
         return (
-            <div className="contenedor" style={{ height: window.innerHeight - 90 }}>
+            <div className="contenedor">
                 <div className="">
                     <h2 className="titulo">Datos Personales</h2>
                     <div className="input-dato">

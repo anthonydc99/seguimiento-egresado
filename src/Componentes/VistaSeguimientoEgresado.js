@@ -5,6 +5,7 @@ import VistaDatosPersonales from './VistaDatosPersonales';
 import VistaRegistroEgresados from './VistaRegistroEgresados';
 import VistaEjercicioProfesional from './VistaEjercicioProfesional';
 import VistaAltaResponsabilidad from './VistaAltaResponsabilidad';
+import './prueba.css';
 
 class VistaSeguimientoEgresado extends React.Component {
     constructor(props) {

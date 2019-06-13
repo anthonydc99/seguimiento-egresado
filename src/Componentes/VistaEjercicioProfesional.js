@@ -1,7 +1,6 @@
 import React from 'react';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import { browserHistory } from 'react-router-3';
-import './App.css';
 
 class VistaEjercicioProfesional extends React.Component {
     constructor(props) {
@@ -61,7 +60,7 @@ class VistaEjercicioProfesional extends React.Component {
 
     render() {
         return (
-            <div className="contenedor" style={{ height: window.innerHeight - 90 }}>
+            <div className="contenedor">
                 <div className="">
                     <h2 className="titulo">EJERCICIO PROFESIONAL O DOCENTE</h2>
                     <p>Consigne el desempeño profesional o desempeño docente: Entidaden la que labora, Cargo que desempeña, tiempo (años, meses) del servicio. [El mas reciente]</p>

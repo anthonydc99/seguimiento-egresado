@@ -70,7 +70,7 @@ class VistaAltaResponsabilidad extends React.Component {
 
     render() {
         return (
-            <div className="contenedor" style={{ height: window.innerHeight - 90 }}>
+            <div className="contenedor">
                 <div className="">
                     <h2 className="titulo">Formacion Academica en Posgrado</h2>
                     <div className="input-dato">
@@ -149,7 +149,7 @@ class VistaAltaResponsabilidad extends React.Component {
                             <table>
                                 <thead>
                                         <tr>
-                                            <td>-----------</td>
+                                            <td></td>
                                             {this.state.datos.map(da =>
                                             <td>{da}</td>
                                             )}
@@ -157,8 +157,66 @@ class VistaAltaResponsabilidad extends React.Component {
                                 </thead>
                                 <tbody>
 
-                                    {this.state.columnas.map(col =>
-                                        <tr>{col}</tr>
+                                    {this.state.columnas.map( (col,index) =>
+                                        <tr>
+                                            <td>{col}</td>
+                                            <td>
+                                                <label>
+                                                <input name = {`g${index}`} type="radio" />
+                                                    <span class="entidad-input"> 
+                                                    </span>         
+                                                                    
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label>
+                                                    <input name={`g${index}`} type="radio" />
+                                                    <span class="entidad-input"> 
+                                                    </span>         
+                                                                        
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label>
+                                                <input name={`g${index}`} type="radio" />
+                                                <span class="entidad-input"> 
+                                                </span>         
+                                                                    
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label>
+                                                <input name={`g${index}`} type="radio" />
+                                                <span class="entidad-input"> 
+                                                </span>         
+                                                                    
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label>
+                                                <input name={`g${index}`} type="radio" />
+                                                <span class="entidad-input"> 
+                                                </span>         
+                                                                    
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label>
+                                                <input name={`g${index}`} type="radio" />
+                                                <span class="entidad-input"> 
+                                                </span>         
+                                                                    
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label>
+                                                <input name={`g${index}`} type="radio" />
+                                                <span class="entidad-input"> 
+                                                </span>         
+                                                                    
+                                                </label>
+                                            </td>
+                                        </tr>
                                     )}
 
                                 </tbody>

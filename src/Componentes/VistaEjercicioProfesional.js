@@ -1,7 +1,7 @@
 import React from 'react';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import { browserHistory } from 'react-router-3';
-
+import './App.css';
 
 class VistaEjercicioProfesional extends React.Component {
     constructor(props) {

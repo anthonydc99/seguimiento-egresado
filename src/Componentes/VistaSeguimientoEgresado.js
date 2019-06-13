@@ -4,6 +4,7 @@ import {browserHistory} from 'react-router-3';
 import VistaDatosPersonales from './VistaDatosPersonales';
 import VistaRegistroEgresados from './VistaRegistroEgresados';
 import VistaEjercicioProfesional from './VistaEjercicioProfesional';
+import VistaAltaResponsabilidad from './VistaAltaResponsabilidad';
 
 class VistaSeguimientoEgresado extends React.Component {
     constructor(props) {
@@ -99,7 +100,7 @@ class VistaSeguimientoEgresado extends React.Component {
                             ) : (null)}
                             {this.state.form4 ? (
                                 <div>
-                                    <p>Form4</p>
+                                <VistaAltaResponsabilidad codigo={ this.state.codigo } />
                                 </div>
                             ) : (null)}
                         </div>

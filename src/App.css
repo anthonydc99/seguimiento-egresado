@@ -493,7 +493,8 @@ button.delete:hover{
   text-align: left;
 }
 span{
-  width: 150px;
+  /*width: 150px;*/
+  width: 600px;
   text-align: left;
 }
 span .label-dato{

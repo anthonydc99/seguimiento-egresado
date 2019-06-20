@@ -76,9 +76,9 @@ class VistaEjercicioProfesional extends React.Component {
                                 <label>
                                     <input name="group1" type="radio" />
                                     {entidad!="OTRO :" ? (
-                                        <span>{entidad}</span>
+                                        <span className="span">{entidad}</span>
                                     ) : (
-                                        <span class="entidad-input"> {entidad}
+                                        <span className="entidad-input span"> {entidad}
                                         
                                         <label className="label-dato">
                                                 
@@ -108,9 +108,9 @@ class VistaEjercicioProfesional extends React.Component {
                                 <label>
                                     <input name="group1" type="radio" />
                                     {vinculo!="OTRO :" ? (
-                                        <span>{vinculo}</span>
+                                        <span className="span">{vinculo}</span>
                                     ) : (
-                                        <span class="entidad-input"> {vinculo}
+                                        <span class="entidad-input span"> {vinculo}
                                         
                                         <label className="label-dato">
                                                 

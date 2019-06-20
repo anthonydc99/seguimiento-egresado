@@ -99,9 +99,9 @@ class VistaAltaResponsabilidad extends React.Component {
                                 <label>
                                         <input name="group1" type="radio" />
                                             {entidad!="OTRO :" ? (
-                                                <span>{entidad}</span>
+                                                <span className="span">{entidad}</span>
                                             ) : (
-                                                <span class="entidad-input"> {entidad}
+                                                <span class="entidad-input span"> {entidad}
                                                 
                                                 <label className="label-dato">
                                                         
@@ -122,9 +122,9 @@ class VistaAltaResponsabilidad extends React.Component {
                                 <label>
                                         <input name="group1" type="radio" />
                                             {perfil!="OTRO :" ? (
-                                                <span>{perfil}</span>
+                                                <span className="span">{perfil}</span>
                                             ) : (
-                                                <span class="entidad-input"> {perfil}
+                                                <span class="entidad-input span"> {perfil}
                                                 
                                                 <label className="label-dato">
                                                         
@@ -146,7 +146,7 @@ class VistaAltaResponsabilidad extends React.Component {
 
                         <label className="label-dato">
                             VALORE LOS SERVICIOS UNIVERSITARIOS RECIBIDOS:
-                            <table>
+                            <table className="table">
                                 <thead>
                                         <tr>
                                             <td></td>
@@ -163,7 +163,7 @@ class VistaAltaResponsabilidad extends React.Component {
                                             <td>
                                                 <label>
                                                 <input name = {`g${index}`} type="radio" />
-                                                    <span class="entidad-input"> 
+                                                    <span class="entidad-input span centrar-label"> 
                                                     </span>         
                                                                     
                                                 </label>
@@ -171,7 +171,7 @@ class VistaAltaResponsabilidad extends React.Component {
                                             <td>
                                                 <label>
                                                     <input name={`g${index}`} type="radio" />
-                                                    <span class="entidad-input"> 
+                                                    <span class="entidad-input span centrar-label"> 
                                                     </span>         
                                                                         
                                                 </label>
@@ -179,7 +179,7 @@ class VistaAltaResponsabilidad extends React.Component {
                                             <td>
                                                 <label>
                                                 <input name={`g${index}`} type="radio" />
-                                                <span class="entidad-input"> 
+                                                <span class="entidad-input span centrar-label"> 
                                                 </span>         
                                                                     
                                                 </label>
@@ -187,7 +187,7 @@ class VistaAltaResponsabilidad extends React.Component {
                                             <td>
                                                 <label>
                                                 <input name={`g${index}`} type="radio" />
-                                                <span class="entidad-input"> 
+                                                <span class="entidad-input span centrar-label"> 
                                                 </span>         
                                                                     
                                                 </label>
@@ -195,7 +195,7 @@ class VistaAltaResponsabilidad extends React.Component {
                                             <td>
                                                 <label>
                                                 <input name={`g${index}`} type="radio" />
-                                                <span class="entidad-input"> 
+                                                <span class="entidad-input span centrar-label"> 
                                                 </span>         
                                                                     
                                                 </label>
@@ -203,7 +203,7 @@ class VistaAltaResponsabilidad extends React.Component {
                                             <td>
                                                 <label>
                                                 <input name={`g${index}`} type="radio" />
-                                                <span class="entidad-input"> 
+                                                <span class="entidad-input span centrar-label"> 
                                                 </span>         
                                                                     
                                                 </label>
@@ -211,7 +211,7 @@ class VistaAltaResponsabilidad extends React.Component {
                                             <td>
                                                 <label>
                                                 <input name={`g${index}`} type="radio" />
-                                                <span class="entidad-input"> 
+                                                <span class="entidad-input span centrar-label"> 
                                                 </span>         
                                                                     
                                                 </label>

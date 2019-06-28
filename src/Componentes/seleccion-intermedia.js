@@ -34,7 +34,9 @@ class VistaIntermedia extends React.Component{
 
     var nombrenuevo = arreglo.join("&");
 
-    fetch(CONFIG+'/recaudaciones/alumno/concepto/listar_codigos/'+ nombrenuevo)
+    fetch(CONFIG+'/recaudaciones/alumno/concepto/listar_codigos/'+ nombrenuevo, {
+        method: 'GET'
+      })
     .then((response)=>{
         return response.json()
     })

@@ -1,5 +1,5 @@
 
-   const CONFIG= 'https://proyecto9676.herokuapp.com/'
-   // const CONFIG= 'https://sigadev1-consultarecibos-back.herokuapp.com/' 
-   //const CONFIG= 'http://localhost:8080/';
+   const CONFIG= 'https://backrf11.herokuapp.com/'
+   //const CONFIG= 'https://proyecto9676.herokuapp.com/'
+
 export default CONFIG;

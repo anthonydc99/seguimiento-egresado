@@ -30,7 +30,7 @@ class VistaDatosPersonales extends React.Component {
 
     //RENDERIZADO INFINITO
     componentDidMount() {
-        fetch(CONFIG + 'mse/alumno/buscar/121')
+        fetch(CONFIG + 'mse/alumno/buscar/'+this.state.codigo)
             .then((response) => {
                 return response.json();
             })

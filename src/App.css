@@ -524,3 +524,6 @@ table tbody tr td .centrar-label {
   display: block;
   margin-left: 40%;
 }
+.centrar-contenido td{
+  text-align: center;
+}

@@ -9,6 +9,28 @@ class VistaRegistroEgresados extends React.Component {
 
         this.state = {
             codigo: this.props.codigo,
+            
+            datos: Array.from([
+                "FECHA DE INICIO",
+                "FECHA DE CULMINACIÓN",
+                "SITUACIÓN",
+            ]),
+
+            columnas: Array.from([
+                Array.from([
+                    "INGLES",
+                    "16-05-1999",
+                    "16-05-2000",
+                    "FINALIZADO",
+                ]),
+                Array.from([
+                    "PROTUGUES",
+                    "16-05-2001",
+                    "16-05-2002",
+                    "FINALIZADO",
+                ]),
+            ]),
+
         }
 
     }
@@ -39,7 +61,37 @@ class VistaRegistroEgresados extends React.Component {
                             SITUACION ACADEMICA ACTUAL:
                             <input type="text" name="name" required/>
                         </label>
+                        <br></br>
                         <input type="submit" value="Enviar" className="btn right" required/>
+                        <br></br><br></br>
+                        <label className="label-dato">
+                            VALORE LOS SERVICIOS UNIVERSITARIOS RECIBIDOS:
+                            <table className="table">
+                                <thead>
+                                        <tr>
+                                            <td></td>
+                                            {this.state.datos.map(da =>
+                                            <td>{da}</td>
+                                            )}
+                                        </tr>
+                                </thead>
+                                <tbody>
+
+                                    {this.state.columnas.map( (col,index) =>
+                                        <tr className="centrar-contenido">
+                                            <td>{col[0]}</td>
+                                            <td>{col[1]}</td>
+                                            <td>{col[2]}</td>
+                                            <td>{col[3]}</td>
+                                        </tr>
+                                    )}
+
+                                </tbody>
+
+
+                            </table>
+                        </label>
+                        
                     </div>
 
                 </div>

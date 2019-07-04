@@ -66,7 +66,8 @@ class VistaRegistroEgresados extends React.Component {
                             <div className="SplitPane row">
                                 <div className="col-xs-12">
                                     <div className="col-xs-8">
-                                        <Select value={this.state.value} onChange={this.handleChange} options={opciones} clearable={false}/>
+                                        <Select value={this.state.value} onChange={this.handleChange} options={opciones} 
+                                        clearable={false} searchable={false}/>
                                     </div>
                                 </div>
                             </div>

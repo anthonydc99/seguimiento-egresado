@@ -29,7 +29,45 @@ class VistaEjercicioProfesional extends React.Component {
                 "CAS",
                 "POR SERVICIO",
                 "OTRO :"
-            ])
+            ]),
+
+
+            datos: Array.from([
+                "ENTIDAD",
+                "TIPO ENTIDAD",
+                "CARGO",
+                "FUNCIONES",
+                "VINCULO LABORAL",
+                "FECHA INICIO",
+                "FECHA FIN",
+                "JEFE INM SUP.",
+                "CORREO JEFE INM SUP."
+            ]),
+
+            columnas: Array.from([
+                Array.from([
+                    "1236558541",
+                    "PRIVADA",
+                    "ANALISTA DE SIST",
+                    "ANALISTA",
+                    "DEPENDIENTE",
+                    "05-05-2018",
+                    "06-05-2018",                    
+                    "XXXXXXXXXX",
+                    "XXXXXXXXXX@gmail.com",
+                ]),
+                Array.from([
+                    "5546585545",
+                    "PUBLICA",
+                    "ASISTENTE DEL ANALISTA",
+                    "ASISTENTE",
+                    "POR SERVICIO",
+                    "04-05-2018",
+                    "06-05-2018",                    
+                    "XXXXXXXXXX",
+                    "XXXXXXXXXX@gmail.com",
+                ]),
+            ]),
         }
     }
     //RENDERIZADO INFINITO
@@ -61,13 +99,14 @@ class VistaEjercicioProfesional extends React.Component {
     render() {
         return (
             <div className="contenedor">
+                
                 <div className="">
                     <h2 className="titulo">EJERCICIO PROFESIONAL O DOCENTE</h2>
                     <p>Consigne el desempeño profesional o desempeño docente: Entidaden la que labora, Cargo que desempeña, tiempo (años, meses) del servicio. [El mas reciente]</p>
                     <div className="input-dato">
                         <label className="label-dato">
                             ENTIDAD:
-                            <input type="text" name="name" value={this.state.codigo} disabled />
+                            <input type="text" name="name" value={this.state.codigo} disabled />                            
                         </label>
                         <label className="label-dato">
                             TIPO
@@ -80,10 +119,9 @@ class VistaEjercicioProfesional extends React.Component {
                                     ) : (
                                         <span className="entidad-input span"> {entidad}
                                         
-                                        <label className="label-dato">
-                                                
-                                                <input type="text" name="name" />
-                                            </label>    
+                                        <label className="label-dato">                                                
+                                                <input type="text" name="name"/>
+                                        </label>    
                                         </span>         
                                                                    
                                     )}
@@ -125,13 +163,13 @@ class VistaEjercicioProfesional extends React.Component {
                         
                         <br></br>
                         <label className="label-dato">
-                            N° DE AÑOS
-                            <p>Indique el N° de Años que se desempeña en la Entidad</p>
+                            FECHA DE INICIO
+                            <p>La fecha de inicio del trabajo</p>
                             <input type="text" name="name" />
                         </label>
                         <label className="label-dato">
-                            N° DE MESES
-                            <p>Indique el N° de Meses que se desempeña en la Entidad</p>
+                            FECHA DE FIN
+                            <p>La fecha de finalización del trabajo</p>
                             <input type="text" name="name" />
                         </label>
                         <label className="label-dato">
@@ -141,10 +179,41 @@ class VistaEjercicioProfesional extends React.Component {
                         
                         <label className="label-dato">
                             CORREO ELECTRÓNICO DE SU JEFE INMEDIATO SUPERIOR
-                            <input type="text" name="name" />
+                            <input type="email" name="name" />
                         </label>
                         <input type="submit" value="Enviar" className="btn right" />
                     </div>
+
+                    <br></br>
+                    <br></br>
+
+
+                    <table className="table">
+                        <thead>
+                            <tr>
+                                {this.state.datos.map(da =>
+                                    <td>{da}</td>
+                                )}
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {this.state.columnas.map((col, index) =>
+                                <tr className="centrar-contenido">
+                                    <td>{col[0]}</td>
+                                    <td>{col[1]}</td>
+                                    <td>{col[2]}</td>
+                                    <td>{col[3]}</td>
+                                    <td>{col[4]}</td>
+                                    <td>{col[5]}</td>
+                                    <td>{col[6]}</td>
+                                    <td>{col[7]}</td>
+                                    <td>{col[8]}</td>
+                                </tr>
+                            )}
+
+                        </tbody>
+                    </table>
 
                 </div>
             </div>

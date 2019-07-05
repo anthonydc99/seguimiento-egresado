@@ -9,6 +9,7 @@ class VistaDatosPersonales extends React.Component {
     constructor(props) {
         super(props);
 
+        dni: '',
         this.state = {
             codigo: this.props.codigo,
             apePaterno: "",
@@ -30,7 +31,7 @@ class VistaDatosPersonales extends React.Component {
 
     //RENDERIZADO INFINITO
     componentDidMount() {
-        fetch(CONFIG + 'mse/alumno/buscar/'+this.state.codigo)
+        fetch(CONFIG + 'mse/alumno/buscar/' + this.state.codigo)
             .then((response) => {
                 return response.json();
             })
@@ -103,11 +104,11 @@ class VistaDatosPersonales extends React.Component {
                         </label>
                         <label className="label-dato">
                             CORREO ELECTRÓNICO PERSONAL:
-                            <input type="email" name="correoPersonal" value={this.state.correoPersonal} onChange={(e) => this.setField(e)} required />
+                            <input type="text" name="correoPersonal" value={this.state.correoPersonal} onChange={(e) => this.setField(e)} required />
                         </label>
                         <label className="label-dato">
                             CORREO ELECTRÓNICO LABORAL:
-                            <input type="email" name="correoLaboral" value={this.state.correoLaboral} onChange={(e) => this.setField(e)} required />
+                            <input type="text" name="correoLaboral" value={this.state.correoLaboral} onChange={(e) => this.setField(e)} required />
                         </label>
                         <input type="submit" value="Enviar" className="btn right" onClick={this.onSubmitDatosPersonales} />
                     </div>
@@ -120,37 +121,56 @@ class VistaDatosPersonales extends React.Component {
     onSubmitDatosPersonales = (e) => {
 
         e.preventDefault();
+        console.log("---ENVIA---");
+        console.log(JSON.stringify({
+            codigoAlumno: this.state.codigo,
+            dni: this.state.dni,
+            apellidoPaterno: this.state.apePaterno,
+            apellidoMaterno: this.state.apeMaterno,
+            nombre: this.state.nombre,
+            fechaNacimiento: this.state.fechaNacimiento,
+            domicilioActual: this.state.domicilioActual,
+            distrito: this.state.distrito,
+            telefonoFijo: this.state.nTelefFijo,
+            telefonoCelular: this.state.nTelefCelular,
+            correoPersonal: this.state.correoPersonal,
+            correoLaboral: this.state.correoLaboral,
+        }));
 
-        const formData = new FormData();
-        formData.append('apellidoPaterno', this.state.apePaterno);
-        formData.append('apeMaterno', this.state.apePaterno);
-        formData.append('nombre', this.state.nombre);
-        formData.append('fechaNacimiento', this.state.fechaNacimiento);
-        formData.append('domicilioActual', this.state.domicilioActual);
-        formData.append('distrito', this.state.distrito);
-        formData.append('nTelefFijo', this.state.nTelefFijo);
-        formData.append('nTelefCelular', this.state.nTelefCelular);
-        formData.append('correoPersonal', this.state.correoPersonal);
-        formData.append('correoPecorreoLaboralrsonal', this.state.correoPersonal);
-        
-            fetch(CONFIG + 'mse/alumno/actualizar/', {
-                method: 'PUT',
-                body: JSON.stringify({
-                    formData
-                })
-            })
+        fetch(CONFIG + 'mse/alumno/actualizar/', {
+            method: 'PUT',
+            body: JSON.stringify({
+                codigoAlumno: this.state.codigo,
+                dni: this.state.dni,
+                apellidoPaterno: this.state.apePaterno,
+                apellidoMaterno: this.state.apeMaterno,
+                nombre: this.state.nombre,
+                fechaNacimiento: this.state.fechaNacimiento,
+                domicilioActual: this.state.domicilioActual,
+                distrito: this.state.distrito,
+                telefonoFijo: this.state.nTelefFijo,
+                telefonoCelular: this.state.nTelefCelular,
+                correoPersonal: this.state.correoPersonal,
+                correoLaboral: this.state.correoLaboral,
+            }),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            }
+        })
             .then((response) => {
-                    return response.json();
-                })
+                swal("Actualizado Correctamente", "", "success");
+                return response.json();
+            })
             .then((alumno) => {
-                    console.log("---Alumno---");
-                    console.log(alumno);
-                 })
+                console.log("---RESPUESTA---");
+                console.log(alumno);
+            })
             .catch((error) => {
-                    swal("Algo salió mal", "", "warning")
-                    console.log(error);
-                });
-        
+                swal("Algo salió mal", "", "warning");
+                console.log(error);
+            });
+
 
     }
 }

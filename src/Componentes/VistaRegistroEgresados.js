@@ -1,54 +1,74 @@
 import React from 'react';
 import Select from 'react-select'
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
+import CONFIG from '../Configuracion/Config'
 
-
-const opciones = [
-    { value: 'Programa 1', label: 'Programa 1' },
-    { value: 'Programa 2', label: 'Programa 2' },
-    { value: 'Programa 3', label: 'Programa 3' }
-];
 class VistaRegistroEgresados extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            value: { value: 'Programa 1', label: 'Programa 1' },
+            value: { value: '', label: '' },
             codigo: this.props.codigo,
+            dni: this.props.dni,
 
             datos: Array.from([
-                "FECHA DE INICIO",
-                "FECHA DE CULMINACIÓN",
-                "SITUACIÓN",
+                "SIGLA DEL PROGRAMA",
+                "CODIGO ALUMNO",
+                "AÑO DE INGRESO",
+                "AÑO DE EGRESO",
             ]),
-
-            columnas: Array.from([
-                Array.from([
-                    "INGLES",
-                    "16-05-1999",
-                    "16-05-2000",
-                    "FINALIZADO",
-                ]),
-                Array.from([
-                    "PROTUGUES",
-                    "16-05-2001",
-                    "16-05-2002",
-                    "FINALIZADO",
-                ]),
-            ]),
+            opciones2: [],
             programaValue: 'Programa 1',
+            cursos: [],
+            programas: [],
 
         }
         this.handleChange = this.handleChange.bind(this);
 
     }
 
-    handleChange = (selectedOption) => {
-        
-            this.setState({
-                value: selectedOption,
-                programaValue: selectedOption.value,
+    componentWillMount() {
+
+        //ANTERIOR LINK
+        //https://modulo-alumno-zuul.herokuapp.com/modulo-alumno-jdbc-client/alumno/alumnoprograma/programa/listar
+        fetch(CONFIG + '/mse/alumno/conProgramaPorCodigo/' + this.state.dni)
+            .then((response) => {
+                return response.json()
+            })
+            .then((progs) => {
+                this.setState({ cursos: progs })
+                console.log(this.state.cursos);
+                // console.log(alumno);
+
+            })
+            .catch(error => {
+                // si hay algún error lo mostramos en consola
+                console.error(error)
             });
+
+        fetch(CONFIG + '/mse/alumno/conProgramas/' + this.state.codigo)
+            .then((response) => {
+                return response.json()
+            })
+            .then((programas) => {
+                this.setState({ opciones2: programas,
+                    value: programas[0]['value'] })
+                // console.log(alumno);
+
+            })
+            .catch(error => {
+                // si hay algún error lo mostramos en consola
+                console.error(error)
+            });
+    }
+
+    handleChange = (selectedOption) => {
+
+        this.setState({
+            value: selectedOption,
+            programaValue: selectedOption.value,
+        });
     }
     render() {
         return (
@@ -66,8 +86,8 @@ class VistaRegistroEgresados extends React.Component {
                             <div className="SplitPane row">
                                 <div className="col-xs-12">
                                     <div className="col-xs-8">
-                                        <Select value={this.state.value} onChange={this.handleChange} options={opciones} 
-                                        clearable={false} searchable={false}/>
+                                        <Select value={this.state.value} onChange={this.handleChange} options={this.state.opciones2}
+                                            clearable={false} searchable={false} />
                                     </div>
                                 </div>
                             </div>
@@ -99,13 +119,17 @@ class VistaRegistroEgresados extends React.Component {
                                     </tr>
                                 </thead>
                                 <tbody>
-
-                                    {this.state.columnas.map((col, index) =>
+                                    {this.state.cursos.map((col, index) =>
                                         <tr className="centrar-contenido">
-                                            <td>{col[0]}</td>
-                                            <td>{col[1]}</td>
-                                            <td>{col[2]}</td>
-                                            <td>{col[3]}</td>
+                                            <td></td>
+                                            <td>{col['siglaPrograma']}</td>
+                                            <td>{col['codAlumno']}</td>
+                                            <td>{col['anioIngreso']}</td>
+                                            {col['anioEgreso'] ? (
+                                                <td>{col['anioEgreso']}</td>
+                                            ) : (
+                                                    <td> - </td>
+                                                )}
                                         </tr>
                                     )}
 
